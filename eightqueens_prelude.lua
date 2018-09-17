@@ -33,6 +33,7 @@ end
 function addqueen(a, n)
     if n > N then -- all queens have been placed?
         printsolution(a)
+        os.exit()
     else -- try to place n-th queen
         for c = 1, N do
             if (isplaceok(a, n, c)) then
