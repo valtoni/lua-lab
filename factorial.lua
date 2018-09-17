@@ -1,4 +1,4 @@
-#/bin/lua
+#!/bin/lua
 
 -- Define a factorial function
 function fact(n)
