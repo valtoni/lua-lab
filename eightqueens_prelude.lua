@@ -7,8 +7,8 @@ i = 1
 function isplaceok(a, n, c)
     for i = 1, n - 1 do -- for each queen already placed
         if (a[i] == c) or -- same column
-           (a[i] - 1 == c - n) or -- same diagonal
-           (a[i] + 1 == c + n) then -- same diagonal
+           (a[i] - i == c - n) or -- same diagonal
+           (a[i] + i == c + n) then -- same diagonal
             return false -- place can be attacked
         end
     end
@@ -33,7 +33,7 @@ end
 function addqueen(a, n)
     if n > N then -- all queens have been placed?
         printsolution(a)
-        os.exit()
+        --os.exit()
     else -- try to place n-th queen
         for c = 1, N do
             if (isplaceok(a, n, c)) then
